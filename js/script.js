@@ -9,7 +9,7 @@ eleBtn.addEventListener('click', function () {
         for (let i = 0; i < 5; i++) {
             numRandom = Math.floor(Math.random() * 100 ) + 1;
             console.log(numRandom);
-            eleNumber.innerHTML += `${numRandom} ` ;
+            eleNumber.innerHTML += `${numRandom} `;
         }
     }
     
@@ -24,7 +24,7 @@ eleBtn.addEventListener('click', function () {
     function waitBar () {
         const container = document.querySelector('.container');
         const Bar = document.createElement('input');
-        Bar.setAttribute("type", "number");
+        Bar.setAttribute("type", "text");
         Bar.setAttribute("name", "number");
         Bar.setAttribute("id", "number");
         container.append(Bar);
@@ -36,7 +36,7 @@ eleBtn.addEventListener('click', function () {
         container.append(eleBtnConfront);
 
         eleBtnConfront.addEventListener('click', function() {
-            if (numRandom == eleBar.value) {
+            if (eleBar.value == numRandom) {
                 console.log('Hai vinto');
             }else {
                 console.log('Hai perso');
