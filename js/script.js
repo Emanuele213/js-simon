@@ -23,20 +23,25 @@ eleBtn.addEventListener('click', function () {
     const idWaitBar = setTimeout (waitBar, 5000);
     function waitBar () {
         const container = document.querySelector('.container');
+        //genera barra input 
         const Bar = document.createElement('input');
         Bar.setAttribute("type", "text");
         Bar.setAttribute("name", "number");
         Bar.setAttribute("id", "number");
+        Bar.setAttribute("placeholder", "inserisci i numeri");
         container.append(Bar);
-        const eleInput = document.querySelector('#number');
-        const eleBar = eleInput.value;
+        const numUser  = document.getElementById("number").value;
+        const eleNum = new Array (numUser);
+        
+        //genera bottone 
         eleBtnConfront = document.createElement('button');
         eleBtnConfront.classList.add('mod-btn-blue');
         eleBtnConfront.innerHTML = "Controlla";
         container.append(eleBtnConfront);
 
         eleBtnConfront.addEventListener('click', function() {
-            if (eleBar.value == numRandom) {
+            console.log(eleNum);
+            if (eleNum == numRandom) {
                 console.log('Hai vinto');
             }else {
                 console.log('Hai perso');
